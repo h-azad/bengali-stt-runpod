@@ -1,0 +1,13 @@
+.venv/
+gradio-venv/
+.cache/
+.logs/
+.env
+__pycache__/
+*.pyc
+upstream/
+models/
+*.wav
+*.mp3
+*.tar.bz2
+
