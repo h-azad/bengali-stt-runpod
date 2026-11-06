@@ -1,5 +1,7 @@
 gradio==5.49.1
 numpy>=1.26,<3
 scipy>=1.11,<2
-websockets==12.0
+# gradio-client requires websockets>=13,<16. The UI uses the asyncio client API,
+# which is available from websockets 13 onward.
+websockets>=13,<16
 

@@ -1,6 +1,6 @@
 """Record/upload Bengali audio and transcribe using an existing Sherpa server.
 
-Install: pip install gradio numpy scipy 'websockets==12.0'
+Install: pip install gradio numpy scipy 'websockets>=13,<16'
 Run: python gradio_app.py
 Expose HTTP port 7860 in RunPod. STT server must already run on port 6006.
 Microphone recordings are submitted after recording stops, not live capture.
@@ -15,7 +15,7 @@ import time
 import gradio as gr
 import numpy as np
 from scipy.signal import resample_poly
-from websockets.legacy.client import connect
+from websockets.asyncio.client import connect
 from websockets.exceptions import ConnectionClosedOK
 
 STT_URL = os.getenv("STT_URL", "ws://127.0.0.1:6006")
